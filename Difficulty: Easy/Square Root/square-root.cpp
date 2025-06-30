@@ -1,31 +1,15 @@
-// Function to find square root
-// x: element to find square root
 class Solution {
-public:
+  public:
     int floorSqrt(int n) {
-        if (n == 0 || n == 1) {
-            return n;
-        }
+        // Your code goes here
         
-        int left = 1, right = n;
-        int result = 1;
+       if(floor(sqrt(n))!=ceil(sqrt(n))){
+           return floor(sqrt(n));
+       }
+       else{
+           return sqrt(n);
+       }
         
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            
-            if (mid == n / mid) {
-                return mid;
-            }
-            
-            if (mid < n / mid) {
-                result = mid;
-                left = mid + 1;
-            }
-            else {
-                right = mid - 1;
-            }
-        }
-        
-        return result;
     }
 };
+ 
